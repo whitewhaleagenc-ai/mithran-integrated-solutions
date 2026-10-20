@@ -1,21 +1,33 @@
 # Mithran Integrated Solutions — website
 
-Solar & land, business consulting, raw-material transport and industrial scrap — run as one chain.
+Solar & land, business consulting, raw-material transport and industrial scrap — run as one chain. Madurai, Tamil Nadu.
 
-## What's here
+Live: https://whitewhaleagenc-ai.github.io/mithran-integrated-solutions/ (custom domain planned: https://www.mithranintegratedsolutions.in)
+
+## Structure
 
 | Path | What it is |
 |---|---|
-| `index.html` | The complete website (single self-contained file — images, fonts and intro video are embedded) |
-| `404.html` | Copy of `index.html` so service pages like `/solar-land` load on GitHub Pages |
-| `assets/logo/` | Logo + name, in white, navy and transparent versions |
-| `assets/images/` | Source photos used as section backgrounds |
-| `assets/video/intro.mp4` | Intro video (2× speed) |
+| `index.html` | Home page (with intro video) |
+| `solar-land/`, `business-consulting/`, `transport/`, `scrap/` | Service pages — each a real HTML page with its own title, description and schema |
+| `404.html` | Not-found page (noindex) |
+| `assets/app.js`, `assets/site.css`, `assets/fonts/` | The site's code, styles and fonts (shared, cached by browsers) |
+| `assets/media/` | Background photos, logo mark and intro video |
+| `assets/logo/`, `assets/icons/` | Logo artwork, favicons and app icons |
+| `og-image.jpg` | Preview image used when the link is shared on WhatsApp, Facebook, LinkedIn, X |
+| `robots.txt`, `sitemap.xml` | For search engines (allows Google, Bing and AI crawlers) |
+| `llms.txt` | Plain-text business summary for AI assistants (ChatGPT, Claude, Perplexity, Gemini) |
+| `manifest.webmanifest` | App name and icons for "Add to home screen" |
 
-## Publish with GitHub Pages
+## SEO / AEO / GEO built in
 
-Settings → Pages → Source: **Deploy from a branch** → Branch: `main` / root → Save.
+- Every page ships readable HTML content before JavaScript runs, so all crawlers (including AI crawlers that don't run JavaScript) can read it.
+- Unique title, meta description, canonical URL, Open Graph and Twitter tags per page.
+- Schema.org JSON-LD: Organization + ProfessionalService (Madurai), WebSite, WebPage, FAQPage, Service, BreadcrumbList.
+- Local signals: geo meta tags, address locality/region, area served, phone in international format.
 
-For the custom domain `www.mithranintegratedsolutions.in`, add it under Settings → Pages → Custom domain and point the domain's DNS to GitHub Pages.
+## Switching to the custom domain
+
+The canonical URLs, sitemap and schema already point at `https://www.mithranintegratedsolutions.in`. To go live on it: add the domain under Settings → Pages → Custom domain, and point the domain's DNS at GitHub Pages.
 
 Contact: thiruselvan.m@mithranintegratedsolutions.in · +91 90258 14383
