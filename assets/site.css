@@ -12,3 +12,117 @@ html.mi-lock,html.mi-lock body{overflow:hidden!important}
 @keyframes miReveal{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
 @media (max-width:640px){#mis-intro .mi-tag{display:none}}@media (max-aspect-ratio:1/1){#mis-intro video{object-fit:contain}}
 .ssr{max-width:72rem;margin:0 auto;padding:9rem 1.5rem 6rem}.ssr h1{font-size:2.4rem;line-height:1.1;margin:0 0 1.5rem}.ssr h2{font-size:1.6rem;margin:3rem 0 1rem}.ssr h3{font-size:1.15rem;margin:1.5rem 0 .4rem}.ssr p,.ssr li,.ssr dd{color:#AEB8D8;line-height:1.65;max-width:42rem}.ssr a{color:#6cc062}.ssr dd{margin:0 0 1rem}
+/* ==== Mithran refinements: spacing, readability, mobile-first images ==== */
+
+/* Wider content area on large screens (less empty space at the sides) */
+.max-w-shell{max-width:min(88rem,100%)}
+@media (min-width:1280px){
+  #top,.mis-bg2,#chain,#faq,#contact,footer{padding-left:4rem;padding-right:4rem}
+}
+
+/* Tighter letter spacing on small caps labels, slightly larger and clearer */
+.tracking-micro{letter-spacing:.09em}
+.text-\[11px\].tracking-micro,.text-\[10px\].tracking-micro{font-size:12px}
+.text-muted{color:#b3bddf}
+
+/* Header navigation: bigger, brighter, clear hover */
+header nav a{font-size:13px!important;color:#e3e8f8!important;letter-spacing:.1em!important;position:relative;padding:.35rem 0}
+header nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:#6cc062;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+header nav a:hover{color:#fff!important}
+header nav a:hover::after{transform:scaleX(1)}
+header nav{gap:2.5rem!important}
+
+/* Hero: the four services become clear, clickable cards */
+#top ol{border-top:0!important;padding-top:0!important;margin-top:3.5rem!important;gap:1rem!important}
+#top ol>li{position:relative;padding:1.1rem 1.25rem 1.15rem;border-radius:14px;
+  background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(6,8,24,.35);transition:transform .2s ease,border-color .2s ease,background .2s ease}
+#top ol>li:hover{transform:translateY(-3px);border-color:rgba(108,192,98,.6);background:linear-gradient(160deg,rgba(108,192,98,.16),rgba(255,255,255,.05))}
+#top ol>li>span{font-size:12px!important;color:#7fd174!important;letter-spacing:.08em}
+#top ol>li>a{font-size:17px!important;color:#fff!important;padding-right:1.5rem}
+#top ol>li>a::before{content:"";position:absolute;inset:0;border-radius:14px}
+#top ol>li::after{content:"\2192";position:absolute;right:1.1rem;bottom:1.05rem;color:#7fd174;font-size:18px;line-height:1;transition:transform .2s ease}
+#top ol>li:hover::after{transform:translateX(3px)}
+#top p.max-w-measure{color:#d3daf0}
+h1,h2,h3{text-wrap:balance}
+
+/* Section rhythm */
+@media (min-width:640px){
+  .sm\:py-32{padding-top:6.5rem;padding-bottom:6.5rem}
+}
+
+/* ================= Tablet & mobile ================= */
+@media (max-width:1023px){
+  header nav{gap:1.5rem!important}
+  header nav a{font-size:12px!important}
+  #top ol{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+@media (max-width:767px){
+  #top{padding-bottom:3.5rem!important}
+  /* Comfortable side gutters and type sizes */
+  #top,.mis-bg2,#chain,#faq,#contact,footer{padding-left:1.25rem!important;padding-right:1.25rem!important}
+  #top h1{font-size:2.35rem!important;line-height:1.08!important}
+  #top .mb-10{margin-bottom:1rem!important}
+  #top p.max-w-measure{margin-top:1.25rem!important;font-size:16px!important;line-height:1.6!important}
+  h2{font-size:1.85rem!important;line-height:1.15!important}
+  .mt-6{margin-top:.9rem}
+  .mt-7{margin-top:1rem}
+  .mt-14,.mt-16,.mt-20{margin-top:2.25rem!important}
+  .pb-24{padding-bottom:3rem!important}
+
+  /* Hero buttons: full width, equal size */
+  #top .mt-12{margin-top:1.75rem!important;gap:.75rem!important}
+  #top .mt-12>a{width:100%;justify-content:center}
+
+  /* Hero service cards: compact 2x2 grid */
+  #top ol{margin-top:2rem!important;gap:.7rem!important}
+  #top ol>li{padding:.9rem .95rem 1rem}
+  #top ol>li>a{font-size:15px!important;line-height:1.3;padding-right:1.1rem}
+  #top ol>li::after{right:.8rem;bottom:.9rem;font-size:16px}
+
+  /* Chain list: less indent, tighter */
+  #chain ol>li{column-gap:1rem!important}
+  #chain h3{font-size:1.45rem!important}
+
+  /* FAQ items spacing */
+  #faq dl{row-gap:1.75rem!important}
+
+  /* Footer columns stack nicely */
+  footer .mt-14{margin-top:2rem!important}
+}
+
+
+/* Portrait screens (phones and tablets): photos shown in full above the content */
+@media (max-width:767px), (max-width:1023px) and (orientation:portrait){
+  /* Show each background photo in full as a band at the top of its section */
+  #top>div[aria-hidden],.mis-bg2>div[aria-hidden],#chain>div[aria-hidden],
+  #faq>div[aria-hidden],#contact>div[aria-hidden],footer>div[aria-hidden]{
+    bottom:auto!important;height:auto!important;aspect-ratio:16/9}
+  #top>div[aria-hidden]{top:64px!important}
+  #chain>div[aria-hidden]>div{position:relative!important;height:100%!important;top:auto!important}
+  #top>div[aria-hidden] img,.mis-bg2>div[aria-hidden] img,#chain>div[aria-hidden] img,
+  #faq>div[aria-hidden] img,#contact>div[aria-hidden] img,footer>div[aria-hidden] img{
+    width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+  #top>div[aria-hidden]>div,.mis-bg2>div[aria-hidden]>div,#chain>div[aria-hidden]>div>div,
+  #faq>div[aria-hidden]>div,#contact>div[aria-hidden]>div,footer>div[aria-hidden]>div{
+    background:linear-gradient(180deg,rgba(0,0,0,0) 55%,var(--sec-bg) 100%)!important}
+  #top{--sec-bg:#1c2046}
+  .mis-bg2,#contact{--sec-bg:#1a1e44}
+  #chain,#faq{--sec-bg:#1e2350}
+  footer{--sec-bg:#0e1130}
+
+  /* Content starts just below the photo */
+  #top{padding-top:calc(64px + 56.25vw + 1.75rem)!important;min-height:0!important}
+  .mis-bg2,#chain,#faq,#contact,footer{padding-top:calc(56.25vw + 1.75rem)!important}
+  .mis-bg2,#chain,#faq,#contact{padding-bottom:3.5rem!important}
+  footer{padding-bottom:2.5rem!important}
+  .mis-bg2{display:block!important;min-height:0!important}
+
+}
+
+@media (max-width:380px){
+  #top h1{font-size:2.1rem!important}
+  #top ol>li>a{font-size:14px!important}
+}
