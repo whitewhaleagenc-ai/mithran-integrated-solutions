@@ -8,11 +8,11 @@ Live: https://whitewhaleagenc-ai.github.io/mithran-integrated-solutions/ (custom
 
 | Path | What it is |
 |---|---|
-| `index.html` | Home page (with intro video) |
+| `index.html` | Home page (particle-universe splash, hero, scroll-linked chain, FAQ, contact form) |
 | `solar-land/`, `business-consulting/`, `transport/`, `scrap/` | Service pages — each a real HTML page with its own title, description and schema |
 | `404.html` | Not-found page (noindex) |
-| `assets/app.js`, `assets/site.css`, `assets/fonts/` | The site's code, styles and fonts (shared, cached by browsers) |
-| `assets/media/` | Background photos, logo mark and intro video |
+| `assets/ds.css`, `assets/ds.js`, `assets/ds-particles.js`, `assets/fonts.css`, `assets/fonts/` | The "Living Chain" design system: styles, interactions (cursor light, tilt, page transitions) and the particle-universe engine used by the splash screen and as the ambient background. Plain HTML/CSS/JS — no build step |
+| `assets/media/` | Photos and logo mark (`intro.mp4` is no longer used) |
 | `assets/logo/`, `assets/icons/` | Logo artwork, favicons and app icons |
 | `og-image.jpg` | Preview image used when the link is shared on WhatsApp, Facebook, LinkedIn, X |
 | `robots.txt`, `sitemap.xml` | For search engines (allows Google, Bing and AI crawlers) |
